@@ -8,9 +8,12 @@ import javax.ws.rs.ext.Provider;
 
 import com.sandesh.rest.jersey.exceptions.InvalidSessionException;
 
-@Provider
+// @Provider
 public class AuthenticationFilter implements ContainerRequestFilter {
 
+	/**
+	 * This is not the recommended way. Simply a header with key sessionAuth is passed in the request
+	 */
 	@Override
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 		String session = requestContext.getHeaderString("sessionAuth");
